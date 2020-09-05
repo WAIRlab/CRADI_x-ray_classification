@@ -1,0 +1,14 @@
+albumentations==0.4.2
+apex==0.1
+numpy==1.16.2
+opencv-python==4.1.1.26
+pandas==0.23.4
+scikit-image==0.14.2
+scikit-learn==0.21.3
+scipy==1.2.0
+sklearn==0.0
+sklearn-pandas==1.8.0
+torch==1.2.0
+torchvision==0.2.2
+tqdm==4.19.9
+

@@ -1,0 +1,6 @@
+{"train_label_path": "/data/raw_data_repository/chestXray/chext_expert_local_10_classes.csv",
+  "k_fold_path": "../data/fold_5_local_val/",
+  "train_img_path": "/data/raw_data_repository/chestXray/chexpert/all_png_512/",
+  "test_img_path": "/data/raw_data_repository/kaggle/kaggle_siim/process/test/",
+  "snapshot_path": "../snapshot_path/"
+}
