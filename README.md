@@ -1,4 +1,88 @@
 <<<<<<< HEAD
+Summary of chest X-ray screening program
+System requirments:
+- Python 3.5
+- CUDA 10.0
+- cudnn 7.1.2
+- nvidia drivers 410.78
+Dependence and requirments：
+[requirements.txt](./requirements.txt)
+
+HARDWARE: (The following specs were used to create the original solution)
+- Ubuntu 16.04.4 LTS
+- 40 vCPUs, 64 GB memory
+- 4 x NVIDIA 1080Ti
+Installation guide:
+
+
+Project structure
+    ├── configs
+    │   ├── path_configs.json      path configuration
+    ├── data                       cross validation dataset
+    ├── snapshot_path              model saving path
+    ├── images                     (path of image in README.md)
+    ├── src                        (code of training and inference)
+    │   ├── inceptionv3_5k         (pretrained model on No.6 hospital data)
+    │   ├── dataset                (loading dataset)
+    │   ├── models                 (models)
+    │   ├── train_model_10_class.py(training model on No.6 hospital data and chexpert data)
+    │   ├── train_model_25_class.py(training model on No.6 hospital data)
+    │   ├── train_model_chexpert.py(training model on chexpert data)
+    │   ├── inference.py           (forcast and generate heatmap)
+    │   ├── inference_cpu.py       (在cpu上预测inference on cpu device)
+    │   ├── inference_gpu.py       (在gpu上预测inference on gpu device)
+    │   ├── inference.ipynb        (在notebook上预测inference on notebook)
+    ├── README.md
+    └── requirements.txt
+
+
+Data content
+```
+/data/raw_data_repository/chestXray
+```
+Including 90k No.6 hospital images and 200k pieces cheXpert 
+
+
+- cleaned_report_25_classes_extraction.csv: 25 classes' labels of No.6 hospital's data
+Labels are PICC implant, aortic abnormalities, aortic arteriosclerosis, aortic unfolding, cardiomegaly, cavity, consolidation
+, emphysema, hilar adenopathy, interstitial involvement, mass, pacemaker implant, patchy consolidation, pleural abnormalities, pleural adhesion, pleural calcification, pleural effusion, pleural thickening, pneumothorax, prominent bronchovascular marking, pulmonary edema, pulmonary nodule, pulmonary parenchymal calcification, scoliosis, small consolidation.
+
+
+
+
+
+
+
+> chexpert
+  >+ chexpert (cheXpert data)
+  >+ local_data (No.6 hospital data)
+  >+ all_png_512 (cheXpert + No.6 hospital data)
+
+Research part
+
+### Background
+X线胸片列为常规体检的检查项目之一。X线摄影的快捷、简便、经济的优势日渐突出，成为胸部检查的优先选择。
+X线胸片能清晰地记录肺部的大体病变，如肺部炎症、肿块、结核等。X线摄片利用人体组织的不同密度可观察到厚度和密度差别较小部位的病变。相比胸部透视，X线胸片显像更清楚，能发现细微的病变；影像资料的客观记录有利于疾病诊治的复查对比；患者接受透视的射线剂量也相对更大。
+X-ray chest film is listed as one of the routine physical examination items.X-ray photography, which is fast, simple and economical, has become the preferred choice for chest examination.
+
+X-ray chest film can clearly record the general pathological changes of the lung, such as pulmonary inflammation, mass, tuberculosis, etc. X-ray photography can be used to observe the lesions in the parts with little difference in thickness and density by using different densities of human tissues. Compared with chest fluoroscopy, X-ray image is more clear, and can find subtle lesions; the objective record of image data is conducive to the review and comparison of disease diagnosis and treatment; the radiation dose of patients receiving fluoroscopy is also relatively larger
+
+### 项目计划目标
+目标：根据胸部X-ray图片检测多种检查所见，并做出相应类别关注区域的热力图。
+
+### 实施路径和方法
+- 1). 用深度卷积神经网络训练多标签分类模型
+- 2). 用grad-cam方法做出类别的关注区域热力图
+
+
+#### 评价指标
+分类metrics 为auc 和 f1 score
+
+
+
+
+
+
 # 胸片疾病筛查项目总结
 
 ## 代码路径：
