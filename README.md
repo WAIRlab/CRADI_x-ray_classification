@@ -72,13 +72,53 @@ Implement path and method
 
 
 Evaluation function:
+
 classification metrics: auc and f1 score
 
+Demo:
+#############################
+#############################
+#############################
+#############################
 
 
+Instruction of use:
 
+How to run code:
 
+#### Setup
+[config]
+add path information in (./configs/path_configs_25.json)
+- train_label_path: path of training dataset label
+- k_fold_path: K fold path
+- train_img_path: training dataset path
+- test_img_path: test dataset path
+- snapshot_path: model saving path
 
+#### Install
+```bash
+pip3 install -r requirements.txt
+```
+
+#### How to run code
+
+1. train 25 multi-class classifation model on local data
+```  
+python3 train_model_25_class.py
+```      
+2. generate heatmap on trained model
+```  
+python3 inference.py
+```  
+3. inference file on cpu device
+```  
+inference_cpu.py
+```  
+4. inferencr file on gpu device
+```  
+inference_gpu.py
+
+#################################################################################################################################################################################
 
 # 胸片疾病筛查项目总结
 
