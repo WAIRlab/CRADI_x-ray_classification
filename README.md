@@ -1,5 +1,7 @@
 <<<<<<< HEAD
-Summary of chest X-ray screening program
+
+Summary of chest X-ray screening program:
+
 System requirments:
 - Python 3.5
 - CUDA 10.0
@@ -43,13 +45,9 @@ Including 90k No.6 hospital images and 200k pieces cheXpert
 
 
 - cleaned_report_25_classes_extraction.csv: 25 classes' labels of No.6 hospital's data
-Labels are PICC implant, aortic abnormalities, aortic arteriosclerosis, aortic unfolding, cardiomegaly, cavity, consolidation
-, emphysema, hilar adenopathy, interstitial involvement, mass, pacemaker implant, patchy consolidation, pleural abnormalities, pleural adhesion, pleural calcification, pleural effusion, pleural thickening, pneumothorax, prominent bronchovascular marking, pulmonary edema, pulmonary nodule, pulmonary parenchymal calcification, scoliosis, small consolidation.
+Labels are PICC implant, aortic abnormalities, aortic arteriosclerosis, aortic unfolding, cardiomegaly, cavity, consolidation, emphysema, hilar adenopathy, interstitial involvement, mass, pacemaker implant, patchy consolidation, pleural abnormalities, pleural adhesion, pleural calcification, pleural effusion, pleural thickening, pneumothorax, prominent bronchovascular marking, pulmonary edema, pulmonary nodule, pulmonary parenchymal calcification, scoliosis, small consolidation.
 
 
-
-
-0
 
 
 > chexpert
@@ -59,21 +57,21 @@ Labels are PICC implant, aortic abnormalities, aortic arteriosclerosis, aortic u
 
 Research part
 
-### Background
+Background
 X-ray chest film is listed as one of the routine physical examination items.X-ray photography, which is fast, simple and economical, has become the preferred choice for chest examination.
 X-ray chest film can clearly record the general pathological changes of the lung, such as pulmonary inflammation, mass, tuberculosis, etc. X-ray photography can be used to observe the lesions in the parts with little difference in thickness and density by using different densities of human tissues. Compared with chest fluoroscopy, X-ray image is more clear, and can find subtle lesions; the objective record of image data is conducive to the review and comparison of disease diagnosis and treatment; the radiation dose of patients receiving fluoroscopy is also relatively larger.
 
 
-###Propose of project
+Propose of project
 Propose: According to the chest X-ray images, a variety of examination findings were detected, and the heatmap of the corresponding category of concerned areas was generated.
 
 
-##Implement path and method
+Implement path and method
 - 1). train multi-label classification model by CNN
 - 2). generate heatmap by using grad-cam
 
 
-Evaluation function
+Evaluation function:
 classification metrics: auc and f1 score
 
 
