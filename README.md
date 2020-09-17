@@ -34,6 +34,25 @@ Project structure
     │   ├── inference.ipynb        (inference on notebook)
     ├── README.md
     └── requirements.txt
+### 项目结构：
+    ├── configs
+    │   ├── path_configs.json      (设置路径文件)
+    ├── data                       (交叉验证数据集)
+    ├── snapshot_path              (模型保存路径)
+    ├── images                     (README.md图片路径)
+    ├── src                        (训练和预测的代码)
+    │   ├── inceptionv3_5k         (在六院数据上预训练的模型)
+    │   ├── dataset                (读取数据代码)
+    │   ├── models                 (模型代码)
+    │   ├── train_model_10_class.py(用六院数据和chexpert数据训练模型)
+    │   ├── train_model_25_class.py(用六院数据训练模型)
+    │   ├── train_model_chexpert.py(用chexpert数据训练模型)
+    │   ├── inference.py           (预测和生成热力图)
+    │   ├── inference_cpu.py       (在cpu上预测)
+    │   ├── inference_gpu.py       (在gpu上预测)
+    │   ├── inference.ipynb        (在notebook上预测)
+    ├── README.md
+    └── requirements.txt
 
 
 Data content
