@@ -114,7 +114,7 @@ python3 inference.py
 ```  
 inference_cpu.py
 ```  
-4. inferencr file on gpu device
+4. inference file on gpu device
 ```  
 inference_gpu.py
 
