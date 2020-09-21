@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 
-Summary of chest X-ray screening program:
+## Summary of chest X-ray screening program:
 
-System requirments:
+### System requirments:
 - Python 3.5
 - CUDA 10.0
 - cudnn 7.1.2
@@ -10,7 +9,7 @@ System requirments:
 Dependence and requirments：
 [requirements.txt](./requirements.txt)
 
-HARDWARE: (The following specs were used to create the original solution)
+### HARDWARE: (The following specs were used to create the original solution)
 - Ubuntu 16.04.4 LTS
 - 40 vCPUs, 64 GB memory
 - 4 x NVIDIA 1080Ti
@@ -44,10 +43,8 @@ Data content
 Including 90k No.6 hospital images and 200k pieces cheXpert 
 
 
-- cleaned_report_25_classes_extraction.csv: 25 classes' labels of No.6 hospital's data
+- cleaned_report_25_classes_extraction.csv: 25 classes' labels of local hospital data
 Labels are PICC implant, aortic abnormalities, aortic arteriosclerosis, aortic unfolding, cardiomegaly, cavity, consolidation, emphysema, hilar adenopathy, interstitial involvement, mass, pacemaker implant, patchy consolidation, pleural abnormalities, pleural adhesion, pleural calcification, pleural effusion, pleural thickening, pneumothorax, prominent bronchovascular marking, pulmonary edema, pulmonary nodule, pulmonary parenchymal calcification, scoliosis, small consolidation.
-
-
 
 
 > chexpert
@@ -62,7 +59,7 @@ X-ray chest film is listed as one of the routine physical examination items.X-ra
 X-ray chest film can clearly record the general pathological changes of the lung, such as pulmonary inflammation, mass, tuberculosis, etc. X-ray photography can be used to observe the lesions in the parts with little difference in thickness and density by using different densities of human tissues. Compared with chest fluoroscopy, X-ray image is more clear, and can find subtle lesions; the objective record of image data is conducive to the review and comparison of disease diagnosis and treatment; the radiation dose of patients receiving fluoroscopy is also relatively larger.
 
 
-Propose of project
+### Propose of project
 Propose: According to the chest X-ray images, a variety of examination findings were detected, and the heatmap of the corresponding category of concerned areas was generated.
 
 
@@ -76,15 +73,29 @@ Evaluation function:
 classification metrics: auc and f1 score
 
 Demo:
-#############################
-#############################
-#############################
-#############################
+
+```  
+python3 inference.py
+```
 
 
-Instruction of use:
+
+### Instruction of use:
 
 How to run code:
+
+Some training sample data can be found under /images
+
+Run the training model
+
+```  
+python3 train_model_25_class.py
+```      
+Predict with training model and draw a heatmap
+
+```  
+python3 inference.py
+```
 
 #### Setup
 [config]
