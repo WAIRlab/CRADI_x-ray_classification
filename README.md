@@ -135,9 +135,6 @@ inference_gpu.py
 
 # 胸片疾病筛查项目总结
 
-## 代码路径：
-http://172.16.0.128/data/VPS/VPS_04/jjdmk/chexnet_pytorch
-
 ## 一. 技术栈
 
 ### 框架和库：
