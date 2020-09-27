@@ -41,7 +41,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from collections import OrderedDict
 
-class BasicConv2d(nn.Module):##定义了一个卷积层+bn+relu
+class BasicConv2d(nn.Module):
 
     def __init__(self, in_planes, out_planes, kernel_size, stride, padding=0):
         super(BasicConv2d, self).__init__()
@@ -71,7 +71,7 @@ class Mixed_3a(nn.Module):##maxpool+conv+bn+relu
     def forward(self, x):
         x0 = self.maxpool(x)
         x1 = self.conv(x)
-        out = torch.cat((x0, x1), 1)##拼接
+        out = torch.cat((x0, x1), 1)
         return out
 
 
@@ -458,7 +458,6 @@ def preprocess_image_imagenet(image):
 
     return (image.astype(np.float32)/255.0 - np.array([0.485, 0.456, 0.406], dtype=np.float32)) / np.array([0.229, 0.224, 0.225], dtype=np.float32)
 
-# 加载预训练模型
 checkpoint = './model_min_loss_{fold}.pth.tar'.format(fold=0)
 state = torch.load(checkpoint,map_location='cpu')['state_dict']
 #model = DenseNet121_change_avg(25).cuda()
@@ -471,14 +470,13 @@ for k, v in state.items():
 model.load_state_dict(new_state_dict) 
 model.eval()
 
-# 读取标签文档
 csv_path = '/CRADI_label_sample.xlsx'
 df_all = pd.read_csv(csv_path)
 
-# 选择要预测的图像
+
 #c_val = list(set(df_all['Image Index'][df_all['position']=='L\F'][df_all['var_0']==1].values.tolist()))
 c_val=['image00000004.png','image00000005.png']
-# 设置显示第几个类的热力图
+
 index = 2
 for i in c_val:
 
